@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Yanga Mgudwa</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="about.html" class="hover:underline">About</a></li>
+          <li><a href="resume-upload.html" class="hover:underline">Upload Resume</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dashboard -->
+  <main class="py-20">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-6">Resume Insights</h2>
+      <canvas id="skillsChart"></canvas>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-4 text-center">
+    <p>© 2024 Yanga Mgudwa | Powered by AWS</p>
+  </footer>
+
+  <!-- Chart.js Script -->
+  <script>
+    const ctx = document.getElementById('skillsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['AWS', 'Python', 'Linux'], // Example skills
+        datasets: [{
+          label: 'Skills Extracted from Resume',
+          data: [5, 4, 3], // Example data
+          backgroundColor: ['#1E90FF', '#32CD32', '#FFA500'],
+        }]
+      },
+    });
+  </script>
+</body>
+</html>
